@@ -41,10 +41,10 @@ void bubblesort(vector<int> arr, string organise){
 void searching(vector<int> arr, int x){
     int max = arr.size();
     
-    cout << "Position :   ";
+    cout << "\nPosition :   ";
     for(int h = 0; h<max; h++){
         if(x == arr[h]){
-            cout << h << "   ";
+            cout << h+1 << "   ";
         }
     }
 }
@@ -55,37 +55,38 @@ int main(){
     vector<int> numbers;
     int y;
     
-    cout<<"Numbers of inputs?" << endl;
+    cout<<"Number of inputs (number)?" << endl;
     cin >> y;
     
     for(int incre = 0; incre < y; incre++){
+        cout << "Please enter the number (" << incre+1 << "): " << endl;
         int j;
         cin >> j;
         
         numbers.push_back(j);
     }
     
-    cout << "The numbers you have input are :  ";
+    cout << "\nThe numbers you have input are :  ";
     for(int incre = 0; incre < y; incre++){
         cout << numbers[incre] << "   ";
     }
     
-    cout<<"\nPlease enter 'asc' for ascending order or 'desc' for descending order." << endl;
+    cout<<"\n\nPlease enter 'asc' for ascending order or 'desc' for descending order." << endl;
     cin>>order;
     
     bubblesort(numbers, order);
     
     char searcher;
-    cout << "\nDo you want to proceed to search for your value? If yes, press 'y'." << endl;
+    cout << "\n\nDo you want to proceed to search for your value? If yes, press 'y'." << endl;
     cin>>searcher;
     
     if(searcher == 'y'){
         int srch;
-        cout <<"Please enter the search value : ";
+        cout <<"\nPlease enter the search value : ";
         cin >> srch;
         searching(numbers , srch);
     }else{
-        cout << "Thank you" << endl;
+        cout << "\nThank you" << endl;
     }
     
     return 0;
